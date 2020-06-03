@@ -12,9 +12,10 @@ function readmeHasLicence(tree, file) {
 	}
 	let licenceHeading = find(tree, n => {
 		if (n.type == "heading" && n.depth == 2) {
-			let text = toString(n).trim().toLowerCase()
+			let h2 = n
+			let text = toString(h2).trim().toLowerCase()
 			if (text == "license") {
-				file.message("Licence should be spelt 'licence', not 'license'")
+				file.message("Licence should be spelt 'licence', not 'license'", h2)
 				return true
 			}
 			return text == "licence"
