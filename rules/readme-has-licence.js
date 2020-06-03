@@ -22,7 +22,9 @@ function readmeHasLicence(tree, file) {
 	})
 
 	if (!licenceHeading) {
-		file.message("Readme should have a 'Licence' section, with a valid licence")
+		file.message(
+			"Readme should have an h2 'Licence' section, with a valid licence"
+		)
 		return
 	}
 
