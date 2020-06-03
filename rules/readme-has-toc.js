@@ -44,12 +44,12 @@ function readmeHasToc(tree, file) {
 	let toc
 
 	if (tocHeading) {
-		let [toc] = findAllBetween(
+		toc = findAllBetween(
 			tree,
 			tocHeading,
 			find(tree, n => n != tocHeading && n.depth == 2),
 			"list"
-		)
+		)[0]
 	}
 
 	if (!toc) {
