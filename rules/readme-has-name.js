@@ -24,7 +24,7 @@ function readmeHasName(tree, file) {
 		return
 	}
 
-	if (!typeof bowerJson.name == "string") {
+	if (typeof bowerJson.name != "string") {
 		file.message("bower.json requires `name` set to the name of the component")
 		return
 	}
