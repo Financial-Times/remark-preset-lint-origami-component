@@ -9,7 +9,7 @@ function readmeHasName(tree, file) {
 		return
 	}
 
-	let bowerJsonPath = join(process.cwd(), "/bower.json")
+	let bowerJsonPath = join(process.cwd(), "bower.json")
 
 	if (!existsSync(bowerJsonPath)) {
 		file.message("bower.json with name is required to be in the component root")
