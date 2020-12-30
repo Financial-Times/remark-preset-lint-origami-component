@@ -9,23 +9,23 @@ function readmeHasName(tree, file) {
 		return
 	}
 
-	let bowerJsonPath = join("bower.json")
+	let packageJsonPath = join("package.json")
 
-	if (!existsSync(bowerJsonPath)) {
-		file.message(`${process.cwd()}/bower.json not found.`)
+	if (!existsSync(packageJsonPath)) {
+		file.message(`${process.cwd()}/package.json not found.`)
 		return
 	}
 
-	let bowerJson
+	let packageJson
 	try {
-		bowerJson = JSON.parse(readFileSync(bowerJsonPath, "utf-8"))
+		packageJson = JSON.parse(readFileSync(packageJsonPath, "utf-8"))
 	} catch (error) {
-		file.message("could not parse bower.json: " + error.message)
+		file.message("could not parse package.json: " + error.message)
 		return
 	}
 
-	if (typeof bowerJson.name != "string") {
-		file.message("bower.json requires `name` set to the name of the component")
+	if (typeof packageJson.name != "string") {
+		file.message("package.json requires `name` set to the name of the component")
 		return
 	}
 
@@ -60,11 +60,11 @@ function readmeHasName(tree, file) {
 
 	h1Content = h1Content.trim()
 
-	if (h1Content == bowerJson.name) {
+	if (h1Content == packageJson.name) {
 		return
 	} else {
 		file.message(
-			`The main heading in the README must be the component's name as defined in the bower.json. expected "${bowerJson.name}", got "${h1Content}"`,
+			`The main heading in the README must be the component's name as defined in the package.json. expected "${packageJson.name}", got "${h1Content}"`,
 			h1
 		)
 	}
