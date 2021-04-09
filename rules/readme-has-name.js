@@ -59,12 +59,18 @@ function readmeHasName(tree, file) {
 	})
 
 	h1Content = h1Content.trim()
+	
+	let name = packageJson.name;
+	// If the package is under the @financial-times namespace then we don't include the namespace in the main heading
+	if (name.startsWith("@financial-times/")) {
+		name.replace("@financial-times/", "");
+	}
 
-	if (h1Content == packageJson.name) {
+	if (h1Content == name) {
 		return
 	} else {
 		file.message(
-			`The main heading in the README must be the component's name as defined in the package.json. expected "${packageJson.name}", got "${h1Content}"`,
+			`The main heading in the README must be the component's name as defined in the package.json, excluding the @financial-times namespace. expected "${name}", got "${h1Content}"`,
 			h1
 		)
 	}
