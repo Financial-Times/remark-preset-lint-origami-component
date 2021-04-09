@@ -59,11 +59,10 @@ function readmeHasName(tree, file) {
 	})
 
 	h1Content = h1Content.trim()
-	
 	let name = packageJson.name;
 	// If the package is under the @financial-times namespace then we don't include the namespace in the main heading
 	if (name.startsWith("@financial-times/")) {
-		name.replace("@financial-times/", "");
+		name = name.replace("@financial-times/", "");
 	}
 
 	if (h1Content == name) {
