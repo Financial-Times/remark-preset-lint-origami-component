@@ -12,6 +12,7 @@ module.exports.plugins = [
 	require("remark-lint-no-blockquote-without-marker"),
 	require("remark-lint-no-literal-urls"),
 	[require("remark-lint-ordered-list-marker-style"), "."],
+	[require("remark-lint-unordered-list-marker-style"), "-"],
 	// Mistakes.
 	require("remark-lint-hard-break-spaces"),
 	require("remark-lint-no-duplicate-definitions"),
