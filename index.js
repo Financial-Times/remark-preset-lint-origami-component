@@ -22,21 +22,21 @@ module.exports.plugins = [
 	require("remark-lint-no-undefined-references"),
 	require("remark-lint-no-unused-definitions"),
 
-	/// Include all of remark-preset-link-consistent
-	[require("remark-lint-blockquote-indentation"), "consistent"],
-	[require("remark-lint-checkbox-character-style"), "consistent"],
-	[require("remark-lint-code-block-style"), "consistent"],
-	[require("remark-lint-emphasis-marker"), "consistent"],
-	[require("remark-lint-heading-style"), "consistent"],
-	[require("remark-lint-link-title-style"), "consistent"],
-	// [require("remark-lint-list-item-content-indent"), "consistent"],
-	[require("remark-lint-rule-style"), "consistent"],
-	[require("remark-lint-strong-marker"), "consistent"],
-	// [require("remark-lint-table-cell-padding"), "consistent"],
+	[require("remark-lint-blockquote-indentation"), 2],
+	[
+		require("remark-lint-checkbox-character-style"),
+		{checked: "x", unchecked: " "},
+	],
+	[require("remark-lint-code-block-style"), "fenced"],
+	[require("remark-lint-emphasis-marker"), "_"],
+	[require("remark-lint-heading-style"), "atx"],
+	[require("remark-lint-link-title-style"), '"'],
+	[require("remark-lint-rule-style"), "***"],
+	[require("remark-lint-strong-marker"), "*"],
 
 	/// Overrides
 	[require("remark-lint-fenced-code-marker"), "`"],
-	[require("remark-lint-list-item-indent"), "mixed"],
+	[require("remark-lint-list-item-indent"), "tab-size"],
 
 	/// Custom rules
 	//// README.md
