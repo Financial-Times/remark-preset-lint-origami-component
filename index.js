@@ -6,7 +6,6 @@ module.exports.plugins = [
 	require("remark-lint-final-newline"),
 	// Rendering across vendors differs greatly if using other styles.
 	require("remark-lint-list-item-bullet-indent"),
-	[require("remark-lint-list-item-indent"), "tab-size"],
 	// Differs or unsupported across vendors.
 	require("remark-lint-no-auto-link-without-protocol"),
 	require("remark-lint-no-blockquote-without-marker"),
@@ -37,7 +36,6 @@ module.exports.plugins = [
 
 	/// Overrides
 	[require("remark-lint-fenced-code-marker"), "`"],
-	[require("remark-lint-list-item-indent"), "tab-size"],
 
 	/// Custom rules
 	//// README.md
